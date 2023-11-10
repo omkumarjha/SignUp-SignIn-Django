@@ -7,8 +7,8 @@ def home(request):
 
 def signup(request):
     fm = SignUp()
-    return render(request,'verify/signup.html',{"form":fm})
+    return render(request,'verify/signup.html',{"forms":fm})
     
 def signin(request):
-    return HttpResponse("It is a Sign In page by Om Kumar")
+    return render(request,'verify/signin.html')
 
