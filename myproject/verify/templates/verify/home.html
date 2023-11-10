@@ -1,13 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp And SignIn | Django</title>
+    <link rel="stylesheet" href='{% static "verify/home.css" %}'>
 </head>
 <body>
 
-    <h1>Welcome To My Page</h1>
+    <div class="container">
+        <div class="heading">
+            <h1>Welcome To My Page</h1>
+        </div>
+        <div class="buttons">
+            <a href="{% url 'signup' %}"><button class="signup btn">Signup</button></a>
+            <a href="{% url 'signin' %}"><button class="signin btn">Signin</button></a>
+        </div>
+    </div>
     
 </body>
 </html>
