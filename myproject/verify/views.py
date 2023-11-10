@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from .forms import SignUp
 # Create your views here.
 
 def home(request):
     return render(request,'verify/home.html')
 
 def signup(request):
-    return HttpResponse("It is a Sign up page by Om Kumar")
-
+    fm = SignUp()
+    return render(request,'verify/signup.html',{"form":fm})
+    
 def signin(request):
     return HttpResponse("It is a Sign In page by Om Kumar")
 
