@@ -60,16 +60,21 @@
                 </form>
 
             </div>
-            <div class="right">
-                {% block rightBlock %}
-                    <img src="{% static 'verify/images/signup-image.jpg' %}" alt="">
+            <div class="rightParent">
+                <div class="right">
+                    {% block rightBlockImg %}
+                        <img src="{% static 'verify/images/signup-image.jpg' %}" alt="">
+                    {% endblock %}
+                </div>
+    
+                {% block rightBlockContent %}
                     <!-- When User is already have account -->
                     <div class="already">
-                        <a href="{% url 'signin' %}"><h3>I am Already a member</h3></a>
+                    <a href="{% url 'signin' %}"><h3>I am Already a member</h3></a>
                     </div>
                 {% endblock %}
-
             </div>
+
        </div>
     </div>
 </body>

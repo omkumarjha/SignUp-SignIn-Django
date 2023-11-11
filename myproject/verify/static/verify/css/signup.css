@@ -14,7 +14,7 @@ body{
 }
 
 .signupBox{
-    max-width: 63%;
+    max-width: 58%;
     margin : 80px auto;
     display: flex;
     align-items: center;
@@ -44,7 +44,7 @@ input:focus{
 }
 
 .right img{
-    width: 100%;
+    width: 90%;
 }
 
 .signupBox .left{
@@ -56,11 +56,7 @@ input:focus{
 }
 
 .right{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 80px;
+    width: 100%;
 }
 
 .box-heading h1{
@@ -93,10 +89,52 @@ svg{
     left: 15px;
 }
 
+.already {
+    position: absolute;
+    bottom: 0;
+    margin-top: 40px;
+}
+
 .already h3{
     font-weight: 400;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     text-decoration: underline;
-    margin-top: 50px;
     color: black;
+    font-size: 15px;
+}
+
+.rightParent{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    margin-right: 60px;
+}
+
+/* Responsive signup.css  */
+
+@media(max-width: 1350px){
+    .signupBox{
+        max-width: 90%;
+    }
+
+    .left{
+        width: 75% !important;
+        margin-left: 75px;
+    }
+}
+
+@media(max-width: 950px){
+    .right{
+        display: none;
+    }
+    .signupBox{
+        flex-direction: column;
+    }
+    .already{
+        position: static;
+    }
 }
