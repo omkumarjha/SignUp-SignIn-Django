@@ -1,3 +1,20 @@
 button[type="submit"]{
     background-color: #9696e8;;
 }
+
+.right img{
+    width: 80%;
+}
+
+.already{
+    position: static;
+    margin-left: 15px;
+}
+
+/* Responsive Code for Signin.css */
+
+@media(max-width: 1050px){
+    .right,.rightParent{
+        display: none;
+    }
+}

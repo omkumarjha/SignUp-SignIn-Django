@@ -34,13 +34,19 @@
 
 {% endblock %}
 
+{% block leftBlockContent %}
+        
+    <div class="already">
+        <a href="{% url 'signup' %}"><h3>Create An Account</h3></a>
+    </div>
+
+{% endblock %}
+
 {% block rightBlockImg %}
     <img src="{% static 'verify/images/signin-image.jpg' %}" alt="">
 
 {% endblock %}
 
 {% block rightBlockContent %}
-    <div class="already">
-        <a href="{% url 'signup' %}"><h3>Create An Account</h3></a>
-    </div>
+    
 {% endblock %}
