@@ -4,17 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
-    <link rel="stylesheet" href='{% static "verify/css/signup.css" %}'>
+    <title>{% block title %} Signup Page {% endblock %}</title>
+
+    {% block static %}
+        <link rel="stylesheet" href='{% static "verify/css/signup.css" %}'>
+    {% endblock %}
+      
+   
 </head>
 <body>
     <div class="container">
        <div class="signupBox">
             <div class="left">
                 <div class="box-heading">
-                    <h1>Sign up</h1>
+                    {% block content %} <h1>Sign up</h1> {% endblock %}
                 </div>
                 <form>
+                {% block leftBlock %}
+
                     {% for form in forms %}
                         
                             {% if forloop.counter == 1 %}
@@ -48,15 +55,20 @@
 
                             {% endif %}
                     {% endfor %}
+                {% endblock %}
                     <button type="submit">Register</button>
                 </form>
+
             </div>
             <div class="right">
-                <img src="{% static 'verify/images/signup-image.jpg' %}" alt="">
-                <!-- When User is already have account -->
-                <div class="already">
-                    <a href="{% url 'signin' %}"><h3>I am Already a member</h3></a>
-                </div>
+                {% block rightBlock %}
+                    <img src="{% static 'verify/images/signup-image.jpg' %}" alt="">
+                    <!-- When User is already have account -->
+                    <div class="already">
+                        <a href="{% url 'signin' %}"><h3>I am Already a member</h3></a>
+                    </div>
+                {% endblock %}
+
             </div>
        </div>
     </div>

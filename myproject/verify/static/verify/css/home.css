@@ -36,3 +36,23 @@
     background: #f8f899;
     color: black;
 }
+
+
+/* Responsive code for home.html  */
+
+@media(max-width: 800px){
+    .heading{
+        font-size: 19px;
+    }
+    .btn{
+        padding: 9px 26px;
+        font-size: 15px;
+        margin: 0px 13px;
+    }
+}
+
+@media(max-width: 500px){
+    .heading{
+        font-size: 15px;
+    }
+}

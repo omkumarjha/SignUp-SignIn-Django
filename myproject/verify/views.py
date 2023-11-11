@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .forms import SignUp
+from .forms import SignUp , SignIn
+
 # Create your views here.
 
 def home(request):
@@ -10,5 +11,6 @@ def signup(request):
     return render(request,'verify/signup.html',{"forms":fm})
     
 def signin(request):
-    return render(request,'verify/signin.html')
+    fm = SignIn()
+    return render(request,'verify/signin.html',{"forms": fm})
 
