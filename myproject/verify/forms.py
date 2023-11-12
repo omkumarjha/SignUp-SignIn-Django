@@ -9,23 +9,19 @@ class SignUp(forms.Form):
     def clean(self):
         cleaned_data = super().clean()
 
-        Valname = self.cleaned_data["name"]
-        Valpassword = self.cleaned_data["password"]
-        Valrepassword = self.cleaned_data["repassword"]
+        name = cleaned_data.get("name") # why we used this not self.cleaned_data["name"] Reason is : Agar koi value nhi di gayi hogi to yeh none return kardega .
+        password = cleaned_data.get("password")
+        email = cleaned_data.get("email")
+        repassword = cleaned_data.get("repassword")
 
-        if(Valpassword != Valrepassword):
-            print("Yes password")
+        if(password and repassword and password != repassword):
             raise forms.ValidationError("Password and Repassword should be same")
 
-        if(not Valname[0].isalpha()):
-            print("No password")
+        if(name and not name[0].isalpha()): # Agar name exist kar raha hai then hum condition dekhenge 
             raise forms.ValidationError("Name should start with alphabets ")
 
-        if(len(Valpassword) < 10 and len(Valrepassword) < 10):
-            print("No yes password")
+        if(password and repassword and len(password) < 10 and len(repassword) < 10):
             raise forms.ValidationError("Length of password should be greater then 10.")
-
-        return cleaned_data
 
 
 class SignIn(forms.Form):
@@ -36,7 +32,6 @@ class SignIn(forms.Form):
         name = self.cleaned_data["name"]
 
         if(not name[0].isalpha()):
-            # print("No password") 
             raise forms.ValidationError("Name should start with alphabets ")
 
         return name

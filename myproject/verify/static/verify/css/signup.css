@@ -85,8 +85,9 @@ button[type="submit"]{
 }
 
 svg{
-    position: relative;
-    left: 15px;
+    position: absolute;
+    bottom: 27px;
+    left: 0;
 }
 
 .already {
@@ -112,6 +113,15 @@ svg{
     position: relative;
     width: 50%;
     margin-right: 60px;
+}
+
+.pos-relative{
+    position: relative;
+}
+
+.errorlist{
+    position: relative;
+    left: 18px;
 }
 
 /* Responsive signup.css  */
