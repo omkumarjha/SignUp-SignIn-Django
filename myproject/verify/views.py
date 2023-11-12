@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import SignUp , SignIn
 from django.contrib.auth.models import User
 from django.contrib import messages 
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 
@@ -54,7 +54,6 @@ def signin(request):
                 return render(request,"verify/loggedin.html",{"name":name})
             else:
                 messages.error(request,"Bad Credentials")
-                print("Bad ")
                 return redirect("signin")
 
 
@@ -65,3 +64,9 @@ def signin(request):
         fm = SignIn()
     return render(request,'verify/signin.html',{"forms": fm})
 
+
+# below method tab chalega jab user ne logout button pe click kara hai 
+def handlelogout(request):
+    logout(request)
+    messages.success(request,"Logged Out Successfully!")
+    return redirect("home")
