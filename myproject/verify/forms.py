@@ -1,10 +1,10 @@
 from django import forms 
 
 class SignUp(forms.Form):
-    name = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Your Name"}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={"placeholder":"Your Email"}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Your Password"}))
-    repassword = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Repeat Your Password"}))
+    name = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Your Name"}),error_messages={"required":"Enter your name "})
+    email = forms.EmailField(widget=forms.TextInput(attrs={"placeholder":"Your Email"}),error_messages={"required":"Enter your email "})
+    password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Your Password"}),error_messages={"required":"Enter your password "})
+    repassword = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Repeat Your Password"}),error_messages={"required":"Enter your repassword "})
 
     def clean(self):
         cleaned_data = super().clean()
@@ -25,8 +25,8 @@ class SignUp(forms.Form):
 
 
 class SignIn(forms.Form):
-    name = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Your Name"}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Your Password"}))
+    name = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Your Name"}),error_messages={"required":"Enter your name "})
+    password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Your Password"}),error_messages={"required":"Enter your password "})
 
     def clean_name(self):
         name = self.cleaned_data["name"]

@@ -124,6 +124,10 @@ svg{
     left: 18px;
 }
 
+.errorlist li{
+    font-weight: 100;
+}
+
 /* Responsive signup.css  */
 
 @media(max-width: 1350px){
