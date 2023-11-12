@@ -161,6 +161,10 @@ svg{
     cursor: pointer;
 }
 
+.form-box span{
+    width: 100%;
+}
+
 /* Responsive signup.css  */
 
 @media(max-width: 1350px){
